@@ -1,0 +1,296 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Eventure — Book Flights & Events</title>
+  <meta name="description" content="Eventure — premium flight & event booking experience" />
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- HEADER / NAV -->
+  <header class="nav">
+    <div class="nav-inner">
+      <div class="brand">
+        <span class="logo-txt">Eventure</span>
+      </div>
+      <nav class="menu">
+        <a href="#home">Home</a>
+        <a href="#results">Events</a>
+        <a href="#deals">Deals</a>
+        <a href="#partners">Partners</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="auth">
+        <button id="signinBtn" class="btn small outline">Sign In</button>
+        <button id="signupBtn" class="btn small red">Sign Up</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO + SEARCH -->
+  <section id="home" class="hero">
+    <div class="hero-overlay">
+      <div class="hero-grid">
+        <div class="hero-left">
+          <h1 class="hero-title">Book your flight & event tickets with confidence</h1>
+          <p class="hero-sub">Fast, secure and stylish booking — made for Eventure.</p>
+
+          <form id="searchForm" class="search-form" autocomplete="off">
+            <div class="row">
+              <div class="field">
+                <label for="from">From</label>
+                <input id="from" placeholder="City or airport" required>
+              </div>
+              <div class="field">
+                <label for="to">To</label>
+                <input id="to" placeholder="City or event location" required>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="field">
+                <label for="date">Departure Date</label>
+                <input id="date" type="date" required>
+              </div>
+              <div class="field">
+                <label for="seatsCount">Seats</label>
+                <select id="seatsCount">
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="row actions">
+              <button type="submit" class="btn red large">Search</button>
+              <button type="button" id="exploreBtn" class="btn outline">Explore Events</button>
+            </div>
+          </form>
+        </div>
+
+        <div class="hero-right">
+          <img src="assets/hero-placeholder.jpg" alt="Hero image — replace me" id="heroImage" class="hero-image">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROMOS / DEALS -->
+  <section id="deals" class="deals">
+    <div class="max">
+      <h2>Special Offers</h2>
+      <div id="promoStrip" class="promo-strip"></div>
+    </div>
+  </section>
+
+  <!-- RESULTS / EVENTS LIST -->
+<main class="max" id="results">
+  <h2>Available Events & Flights</h2>
+
+  <!-- Filters -->
+<div class="filters">
+  <input id="filterKeyword" placeholder="Search events or destinations">
+  <select id="filterCategory">
+    <option value="">All Categories</option>
+    <option value="Concert">Concert</option>
+    <option value="Theatre">Theatre</option>
+    <option value="Festival">Festival</option>
+    <option value="Comedy">Comedy</option>
+  </select>
+  <button id="resetFilters" class="btn outline">Reset</button>
+</div>
+
+<!-- Event Cards -->
+<div id="cards" class="cards-grid">
+
+  <div class="card">
+    <img src="assets/stellar-night.jpg" alt="Stellar Night Concert">
+    <h4>Stellar Night Concert</h4>
+    <p>2025-12-12 — 19:00 • Grand Arena</p>
+    <p>An immersive live performance featuring top artists.</p>
+    <p><strong>KSh 1,500</strong></p>
+    <button class="btn small red">Book</button>
+  </div>
+
+  <div class="card">
+    <img src="assets/classic-theatre.jpg" alt="Classic Theatre Play">
+    <h4>Classic Theatre Play</h4>
+    <p>2026-01-08 — 18:00 • Downtown Theatre</p>
+    <p>A timeless drama performed by an award-winning cast.</p>
+    <p><strong>KSh 900</strong></p>
+    <button class="btn small red">Book</button>
+  </div>
+
+  <div class="card">
+    <img src="assets/food-art.jpg" alt="Food & Art Festival">
+    <h4>Food & Art Festival</h4>
+    <p>2026-03-20 — 10:00 • Riverside Grounds</p>
+    <p>Local flavors, art stalls, and family-friendly performances.</p>
+    <p><strong>KSh 500</strong></p>
+    <button class="btn small red">Book</button>
+  </div>
+
+  <div class="card">
+    <img src="assets/indie-beats.jpg" alt="Indie Beats Fest">
+    <h4>Indie Beats Fest</h4>
+    <p>2026-04-05 — 16:00 • Open Park</p>
+    <p>The best indie acts across town, one unforgettable night.</p>
+    <p><strong>KSh 1,200</strong></p>
+    <button class="btn small red">Book</button>
+  </div>
+
+  <div class="card">
+    <img src="assets/opera-night.jpg" alt="Gala Opera Night">
+    <h4>Gala Opera Night</h4>
+    <p>2025-11-01 — 20:00 • Opera House</p>
+    <p>A night of classical masterpieces by world-class performers.</p>
+    <p><strong>KSh 2,500</strong></p>
+    <button class="btn small red">Book</button>
+  </div>
+
+  <div class="card">
+    <img src="assets/beach-party.jpg" alt="Summer Beach Party">
+    <h4>Summer Beach Party</h4>
+    <p>2026-06-17 — 14:00 • Coastal Grounds</p>
+    <p>Beachside music, games, and food — feel the summer vibes.</p>
+    <p><strong>KSh 600</strong></p>
+    <button class="btn small red">Book</button>
+  </div>
+
+  <div class="card">
+    <img src="assets/jazz-wine.jpg" alt="Jazz & Wine Evening">
+    <h4>Jazz & Wine Evening</h4>
+    <p>2025-10-20 — 19:30 • River Lounge</p>
+    <p>Smooth jazz, fine wine, and great company under the stars.</p>
+    <p><strong>KSh 1,800</strong></p>
+    <button class="btn small red">Book</button>
+  </div>
+
+  <div class="card">
+    <img src="assets/comedy-night.jpg" alt="Stand-up Comedy Night">
+    <h4>Stand-up Comedy Night</h4>
+    <p>2025-12-05 — 21:00 • Laugh House</p>
+    <p>Laugh out loud with the country’s top comedians.</p>
+    <p><strong>KSh 700</strong></p>
+    <button class="btn small red">Book</button>
+  </div>
+
+</div>
+
+
+  <!-- SEAT MODAL -->
+  <div id="bookingModal" class="modal" aria-hidden="true">
+    <div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <button class="modal-close" id="closeModalBtn" title="Close">✕</button>
+      <h3 id="modalTitle">Select Seats</h3>
+
+      <div id="modalContent" class="modal-content">
+        <div class="modal-left">
+          <img id="modalEventImg" src="assets/event-placeholder.jpg" alt="Event image (replace)">
+          <div class="event-summary">
+            <h4 id="modalEventTitle">Event Title</h4>
+            <p id="modalEventWhen">Date & time</p>
+            <p id="modalEventVenue">Venue</p>
+            <p>Price per seat: <strong id="modalSeatPrice">KSh 1500</strong></p>
+          </div>
+        </div>
+
+        <div class="modal-right">
+          <div class="seat-legend">
+            <span class="seat legend available"></span> Available
+            <span class="seat legend selected"></span> Selected
+            <span class="seat legend booked"></span> Booked
+          </div>
+
+          <div id="seatMap" class="seat-map" role="grid"></div>
+
+          <div class="checkout">
+            <div class="summary-line">Selected seats: <span id="selectedList">–</span></div>
+            <div class="summary-line">Total: <strong id="selectedTotal">KSh 0</strong></div>
+
+            <form id="checkoutForm" class="checkout-form">
+              <div class="input-inline">
+                <input id="buyerName" placeholder="Full name" required>
+                <input id="buyerEmail" type="email" placeholder="Email" required>
+              </div>
+              <div class="input-inline">
+                <input id="buyerPhone" placeholder="Phone (optional)">
+                <input id="promoCode" placeholder="Promo code (optional)">
+              </div>
+              <div class="row actions">
+                <button type="button" id="confirmBookingBtn" class="btn red">Confirm Booking</button>
+              </div>
+              <div id="holdTimer" class="hold-timer"></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SUCCESS MODAL -->
+  <div id="successModal" class="modal" aria-hidden="true">
+    <div class="modal-panel small">
+      <button class="modal-close" id="closeSuccessBtn">✕</button>
+      <div class="success-content">
+        <div class="checkmark">✓</div>
+        <h3>Booking Confirmed</h3>
+        <p id="successSummary">Thank you! Your booking reference is <strong id="bookingRef">EVT-XXXXXX</strong>.</p>
+        <div class="success-actions">
+          <button id="downloadTicket" class="btn">Download Ticket</button>
+          <button id="closeSuccessAction" class="btn outline">Done</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PARTNERS -->
+  <section id="partners" class="partners">
+    <div class="max">
+      <h3>Our Partners</h3>
+      <div class="partner-grid">
+        <div class="partner"><img src="assets/partner-1.png" alt="Partner 1"></div>
+        <div class="partner"><img src="assets/partner-2.png" alt="Partner 2"></div>
+        <div class="partner"><img src="assets/partner-3.png" alt="Partner 3"></div>
+        <div class="partner"><img src="assets/partner-4.png" alt="Partner 4"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer id="contact" class="footer">
+    <div class="max">
+      <div class="footer-grid">
+        <div>
+          <h4>Eventure</h4>
+          <p>Book flights, festivals and live shows with confidence.</p>
+        </div>
+        <div>
+          <h5>Company</h5>
+          <a href="#">About</a>
+          <a href="#">Careers</a>
+          <a href="#">Press</a>
+        </div>
+        <div>
+          <h5>Support</h5>
+          <a href="#">Help Center</a>
+          <a href="#">Manage Booking</a>
+          <a href="#">Refunds</a>
+        </div>
+        <div>
+          <h5>Contact</h5>
+          <p>hello@eventure</p>
+          <p>+254 729089668</p>
+        </div>
+      </div>
+      <div class="footer-bottom">© Eventure 2025 — All rights reserved</div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
